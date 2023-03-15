@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="main"></main>
+    <script>
+        const mainElement = document.getElementById('main');
+
+        const secondDiv = document.createElement('div');
+        mainElement.append(secondDiv)
+        const button = document.createElement('button');
+        secondDiv.append(button);
+        button.innerText = ("BOUTON")
+
+
+        button.style.width = '100px'
+        button.style.height = '40px'
+        button.style.cursor = 'pointer'
+
+
+        const firstDiv = document.createElement('div');
+        mainElement.append(firstDiv);
+        const pElement = document.createElement('p');
+        firstDiv.append(pElement);
+        pElement.innerText = "Pop-Up";
+
+        firstDiv.style.width = '300px';
+        firstDiv.style.height = '300px';
+        firstDiv.style.background = 'yellow'
+        firstDiv.style.display = 'flex'
+        firstDiv.style.justifyContent = 'center'
+        firstDiv.style.alignItems = 'center'
+        firstDiv.style.position = 'absolute'
+        firstDiv.style.top = '30%'
+        firstDiv.style.left = '40%'
+        firstDiv.style.opacity = '0'
+
+        pElement.style.textAlign = 'center'
+        pElement.style.Top = '40%'
+        pElement.style.border = '1px solid red'
+        pElement.style.background = 'blue'
+        pElement.style.color = 'white'
+        pElement.style.padding = '10px'
+
+        button.addEventListener('click', popUp => {
+            firstDiv.style.opacity = '1';
+        });
+
+        const buttonCroix = document.createElement('div');
+        firstDiv.append(buttonCroix)
+
+        buttonCroix.style.background = "red";
+        buttonCroix.style.width = '20px';
+        buttonCroix.style.height = '20px';
+        buttonCroix.style.position = 'absolute';
+        buttonCroix.style.top = '5px';
+        buttonCroix.style.right = '5px'
+        buttonCroix.style.cursor = 'pointer'
+
+        buttonCroix.addEventListener('click', supprPopUp => {
+            firstDiv.style.opacity = '0';
+        })
+
+
+     
+
+
+
+    </script>
+</body>
+</html>
